@@ -110,7 +110,7 @@ export default function AcademicJourney() {
           // viewport={{ once: true, amount: 0.15 }}
         >
           <img
-            src="/images/academic.jpg"
+            src="images/academic.jpg"
             alt="Academic Journey"
             className="w-full object-cover aspect-square rounded-3xl"
           />

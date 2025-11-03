@@ -3,26 +3,26 @@ import { motion } from "framer-motion";
 
 export default function Skills() {
   const frontend = [
-    { name: "HTML", icon: "/icons/html.png", color: "242 102 41" },
-    { name: "CSS", icon: "/icons/css.png", color: "59 130 246" },
-    { name: "JavaScript", icon: "/icons/js.png", color: "240 218 79" },
-    { name: "Tailwind", icon: "/icons/tailwind.png", color: "44 194 199" },
-    { name: "React JS", icon: "/icons/react.png", color: "33 33 33" },
+    { name: "HTML", icon: "icons/html.png", color: "242 102 41" },
+    { name: "CSS", icon: "icons/css.png", color: "59 130 246" },
+    { name: "JavaScript", icon: "icons/js.png", color: "240 218 79" },
+    { name: "Tailwind", icon: "icons/tailwind.png", color: "44 194 199" },
+    { name: "React JS", icon: "icons/react.png", color: "33 33 33" },
   ];
 
   const backend = [
-    { name: "NodeJS", icon: "/icons/nodeJs.png", color: "139 209 54" },
-    { name: "Express", icon: "/icons/express.png", color: "0 34 51" },
-    { name: "MongoDB", icon: "/icons/mongoDB.png", color: "67 153 52" },
+    { name: "NodeJS", icon: "icons/nodeJs.png", color: "139 209 54" },
+    { name: "Express", icon: "icons/express.png", color: "0 34 51" },
+    { name: "MongoDB", icon: "icons/mongoDB.png", color: "67 153 52" },
   ];
 
   const tools = [
-    { name: "VS Code", icon: "/icons/vsCode.png" },
-    { name: "Figma", icon: "/icons/figma.png" },
-    { name: "Git", icon: "/icons/git.png" },
-    { name: "GitHub", icon: "/icons/github.png" },
-    { name: "Postman", icon: "/icons/postman.png" },
-    { name: "Acode", icon: "/icons/acode.png" },
+    { name: "VS Code", icon: "icons/vsCode.png" },
+    { name: "Figma", icon: "icons/figma.png" },
+    { name: "Git", icon: "icons/git.png" },
+    { name: "GitHub", icon: "icons/github.png" },
+    { name: "Postman", icon: "icons/postman.png" },
+    { name: "Acode", icon: "icons/acode.png" },
   ];
 
   // Animation variants
@@ -58,7 +58,7 @@ export default function Skills() {
           className="md:row-span-2 flex flex-col md:justify-self-end md:place-self-center lg:max-w-[420px]"
         >
           <h3 className="text-xl font-semibold mb-1">FrontEnd</h3>
-          <div className="rounded-tl-[10px] rounded-tr-[60px] rounded-bl-[60px] px-6 py-8 bg-gradient-to-r from-teal-200 to-cyan-200 shadow-lg"> 
+          <div className="rounded-tl-[10px] rounded-tr-[60px] rounded-bl-[60px] px-6 py-8 bg-gradient-to-r from-teal-200 to-cyan-200 shadow-lg">
             <div className="flex gap-3 mlg:gap-5 flex-wrap justify-center">
               {frontend.map((skill, i) => (
                 <motion.div

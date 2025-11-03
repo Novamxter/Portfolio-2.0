@@ -1,6 +1,6 @@
 import Lenis from "@studio-freight/lenis";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import BgCanvas from "./components/BgCanvas";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero/Hero";
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Router basename="/Portfolio-2.0">
+      <Router>
         <Navbar />
         {/* <BgCanvas /> */}
 
