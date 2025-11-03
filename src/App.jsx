@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename="/Portfolio-2.0">
         <Navbar />
         {/* <BgCanvas /> */}
 
