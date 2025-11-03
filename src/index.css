@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@config "../tailwind.config.js";
+
+@theme {
+  --font-logo: "Audiowide", sans-serif;
+  --font-fig: "Figtree", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  /* --breakpoint-x-sm: 474px;
+  --breakpoint-mlg: 884px;
+  --breakpoint-m-mlg: 984px; */
+}
+
+@layer components {
+  section {
+    scroll-margin-top: 80px; /* adjust to navbar height */
+  }
+
+  /* Utilities */
+  .nav-item {
+    @apply text-[14px] lg:text-[16px] font-medium hover:scale-[1.07] cursor-pointer;
+  }
+  .section-heading {
+    @apply text-2xl md:text-3xl mb-4 font-logo relative before:absolute before:-bottom-1 before:left-0 before:content-[''] before:h-1 before:w-15 before:bg-black ;
+  }
+
+  /* Hero - Section */
+
+  .hero-btn {
+    @apply h-[34px] px-7 sm:h-[40px] sm:px-10 bg-[linear-gradient(135deg,_#8BC6E9,_#2F7FAF)] rounded-full text-white text-sm sm:text-xl;
+  }
+  .hero-icon-cont {
+    @apply h-[44px] aspect-square rounded-full bg-[linear-gradient(to_bottom_right,_#9CF8FD_0%,_#477EBF_150%)] shadow-[4px_4px_22px_0_rgba(0,0,0,0.25)] flex justify-center items-center;
+  }
+  .hero-icon {
+    @apply text-white text-[24px];
+  }
+
+  /* Skills - Section */
+  .skill-card {
+    @apply relative z-10 flex flex-col items-center p-3 w-[80px] x-sm:w-[90px] md:w-[86px] mlg:w-[92px] rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[inset_0_-15px_10px_rgb(var(--skill-card-color)_/_0.7)] before:content-[''] before:absolute before:inset-0 before:bg-white/40 before:backdrop-blur-xl before:border before:border-white before:rounded-xl before:z-[-1] before:transition before:duration-300 after:content-[''] after:absolute after:inset-0 after:rounded-xl after:z-[-2] after:transition after:duration-300 hover:after:shadow-[0_0_15px_rgb(var(--skill-card-color)_/_0.6),inset_0_10px_20px_rgb(var(--skill-card-color)_/_0.35),inset_-5px_0_5px_rgb(var(--skill-card-color)_/_0.5),inset_5px_0_5px_rgb(var(--skill-card-color)_/_0.5)];
+  }
+
+  /* Contact - Section  */
+  .contact-input {
+    @apply px-4 py-2 rounded-lg bg-[#D1FFFF] focus:outline-none focus:ring-2 focus:ring-teal-400 placeholder:text-black;
+  }
+}
