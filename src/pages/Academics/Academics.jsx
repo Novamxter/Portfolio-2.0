@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { MotionWrapper } from "../../components/MotionWrapper";
 
 export default function AcademicJourney() {
   const academics = [
@@ -40,31 +40,34 @@ export default function AcademicJourney() {
   return (
     <div className="flex justify-between py-12 px-8 md:px-20">
       <div className="flex flex-col w-full">
-        <motion.h2
-          // initial={{ y: 40, opacity: 0 }}
-          // whileInView={{ y: 0, opacity: 1 }}
-          // transition={{ duration: 0.6, delay: 0.2 }}
-          // viewport={{ once: true, amount: 0.1 }}
+        <MotionWrapper
+          as="h2"
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="section-heading"
         >
           Academic Journey
-        </motion.h2>
+        </MotionWrapper>
 
-        <motion.div
+        <MotionWrapper
           className="relative x-sm:min-w-[346px] m-auto lg:min-w-none"
-          // variants={container}
-          // initial="hidden"
-          // whileInView="show"
-          // viewport={{ once: true, amount: 0.2 }}
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {academics.map((itemData, index) => (
-            <motion.div
-              // key={index}
-              // variants={item}
+            <MotionWrapper
+              key={index}
+              variants={item}
               className="relative mb-12 ml-6"
             >
               {/* Animated Line */}
-              <motion.span
+              <MotionWrapper
+                as="span"
+                exception={true}
                 className="absolute left-[-30px] top-[4px] w-[2px] bg-[#58C6D7]"
                 initial={{ height: 0 }}
                 whileInView={{ height: "140%" }}
@@ -77,12 +80,13 @@ export default function AcademicJourney() {
               />
 
               {/* Circle */}
-              <motion.span
+              <MotionWrapper
+                as="span"
                 className="absolute left-[-40px] top-[4px] flex items-center justify-center w-[20px] h-[20px] bg-[#58C6D7] rounded-full"
-                // initial={{ scale: 0 }}
-                // whileInView={{ scale: 1 }}
-                // viewport={{ once: true, amount: 0.2 }}
-                // transition={{ duration: 0.4, delay: index * 0.5 }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.5 }}
               />
 
               {/* Content */}
@@ -91,30 +95,30 @@ export default function AcademicJourney() {
               </h3>
               <p className="font-semibold text-gray-800">{itemData.title}</p>
               <p className="text-gray-600">{itemData.place}</p>
-            </motion.div>
+            </MotionWrapper>
           ))}
-        </motion.div>
+        </MotionWrapper>
       </div>
 
       {/* Right Side Image */}
       <div className="hidden md:flex justify-center w-full max-w-[50%]">
-        <motion.div
+        <MotionWrapper
           className="w-[80%] max-w-[400px] aspect-square overflow-hidden"
-          // initial={{ x: 100, opacity: 0, scale: 0.8 }}
-          // whileInView={{ x: 0, opacity: 1, scale: 1 }}
-          // transition={{
-          //   duration: 0.8,
-          //   ease: "easeOut",
-          //   delay: 0.3,
-          // }}
-          // viewport={{ once: true, amount: 0.15 }}
+          initial={{ x: 100, opacity: 0, scale: 0.8 }}
+          whileInView={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: 0.3,
+          }}
+          viewport={{ once: true, amount: 0.15 }}
         >
           <img
-            src="images/academic.jpg"
+            src={`${import.meta.env.BASE_URL}images/academic.jpg`}
             alt="Academic Journey"
             className="w-full object-cover aspect-square rounded-3xl"
           />
-        </motion.div>
+        </MotionWrapper>
       </div>
     </div>
   );

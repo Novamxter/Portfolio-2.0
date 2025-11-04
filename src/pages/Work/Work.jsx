@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { MotionWrapper } from "../../components/MotionWrapper"
 import { Link } from "react-router-dom"; // for navigation
 import ShowAll from "./ShowAll";
 import "./Work.css";
@@ -97,15 +98,16 @@ export default function Work({ showAll = false }) {
       className={`px-6 bg-gradient-to-br from-[#C7EAFF] to-[#A2FFF0] ${showAll ? "pt-4 pb-8" : "py-10"}`}
     >
       <div className="flex justify-center">
-        <motion.h2
-          // initial={{ y: 40, opacity: 0 }}
-          // whileInView={{ y: 0, opacity: 1 }}
-          // transition={{ duration: 0.6, delay: 0.2 }}
-          // viewport={{ once: true, amount: 0.1 }}
+        <MotionWrapper
+          as="h2"
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="section-heading mb-8"
         >
           Crafted with Code
-        </motion.h2>
+        </MotionWrapper>
       </div>
 
       {/* Tabs only visible on /projects */}
@@ -132,18 +134,18 @@ export default function Work({ showAll = false }) {
 
       {/* Motion Grid Container */}
       {!showAll && (
-        <motion.div
-          // variants={containerVariants}
-          // initial="hidden"
-          // whileInView="show"
-          // viewport={{ once: true, amount: 0.1 }}
+        <MotionWrapper
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
           className="grid gap-8 max-w-6xl mx-auto sm:grid-cols-2 lg:grid-cols-3"
         >
           {filteredProjects.slice(0, 3).map((project) => (
-            <motion.div
-              // key={project.id}
-              // variants={cardVariants}
-              // viewport={{ once: true, amount: 0.1 }}
+            <MotionWrapper
+              key={project.id}
+              variants={cardVariants}
+              viewport={{ once: true, amount: 0.1 }}
               className="bg-gradient-to-br from-[#229FAE] to-[#49556B] rounded-2xl text-white shadow-xl overflow-hidden flex flex-col"
             >
               <div className="bg-gray-300 flex items-center justify-center aspect-video font-bold text-xl">
@@ -189,18 +191,18 @@ export default function Work({ showAll = false }) {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </MotionWrapper>
           ))}
-        </motion.div>
+        </MotionWrapper>
       )}
 
       {/* View More link only on Home */}
       {!showAll && (
-        <motion.div
-          // variants={buttonVariant}
-          // initial="hidden"
-          // whileInView="show"
-          // viewport={{ once: true, amount: 0.1 }}
+        <MotionWrapper
+          variants={buttonVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mt-10"
         >
           <Link
@@ -209,7 +211,7 @@ export default function Work({ showAll = false }) {
           >
             View All Projects →
           </Link>
-        </motion.div>
+        </MotionWrapper>
       )}
     </div>
   );
